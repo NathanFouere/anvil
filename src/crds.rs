@@ -248,3 +248,39 @@ pub struct RabbitmqClusterPersistenceSpec {
     #[serde(default = "default_storage")]
     pub storage: k8s_openapi::apimachinery::pkg::api::resource::Quantity,
 }
+
+// cf . https://kubernetes.io/docs/reference/kubernetes-api/autoscaling/horizontal-pod-autoscaler-v2/#HorizontalPodAutoscalerSpec
+#[derive(
+    kube::CustomResource,
+    Default,
+    Debug,
+    Clone,
+    serde::Deserialize,
+    serde::Serialize,
+    schemars::JsonSchema,
+    PartialEq,
+)]
+#[kube(group = "anvil.dev", version = "v1", kind = "VHorizontalPodAutoscaler")]
+#[kube(shortname = "vrs", namespaced)]
+#[kube(status = "VHorizontalPodAutoscalerStatus")]
+pub struct VHorizontalPodAutoscalerSpec {
+    pub behavior: Option<k8s_openapi::api::autoscaling::v2::HorizontalPodAutoscalerBehavior>,
+    pub max_replicas: i32,
+    pub metrics: Option<k8s_openapi::api::autoscaling::v2::MetricSpec>,
+    pub min_replicas: Option<i32>,
+}
+
+#[derive(Clone, Debug, Default, serde::Deserialize, serde::Serialize, schemars::JsonSchema)]
+pub struct VHorizontalPodAutoscalerStatus {
+    pub desired_replicas: i32,
+}
+ 
+impl Default for VHorizontalPodAutoscaler {
+    fn default() -> Self {
+        Self {
+            metadata: k8s_openapi::apimachinery::pkg::apis::meta::v1::ObjectMeta::default(),
+            spec: VHorizontalPodAutoscalerSpec::default(),
+            status: None,
+        }
+    }
+}
