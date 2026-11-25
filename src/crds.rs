@@ -1,4 +1,6 @@
 #![cfg_attr(verus_keep_ghost, verifier::allow(unknown_automatic_derive))]
+
+use k8s_openapi::apimachinery::pkg::apis::meta::v1::Condition;
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
     #[error("ShimLayerError: {0}")]
@@ -247,4 +249,41 @@ pub struct RabbitmqClusterPersistenceSpec {
     pub storage_class_name: String,
     #[serde(default = "default_storage")]
     pub storage: k8s_openapi::apimachinery::pkg::api::resource::Quantity,
+}
+
+// ---------------
+
+#[derive(
+    kube::CustomResource,
+    Default,
+    Debug,
+    Clone,
+    serde::Deserialize,
+    serde::Serialize,
+    schemars::JsonSchema,
+)]
+#[kube(group = "anvil.dev", version = "v1", kind = "MemcachedCluster")]
+#[kube(shortname = "rbmq", namespaced)]
+pub struct MemcachedClusterSpec {
+    pub replicas: i32,
+    pub image: String,
+    #[serde(default)]
+    pub labels: std::collections::BTreeMap<String, String>,
+    #[serde(default)]
+    pub annotations: std::collections::BTreeMap<String, String>,
+}
+
+
+#[derive(Clone, Debug, Default, serde::Deserialize, serde::Serialize, schemars::JsonSchema)]
+pub struct MemcachedStatus {
+    pub conditions: Vec<Condition>,
+}
+
+impl Default for MemcachedCluster {
+    fn default() -> Self {
+        Self {
+            metadata: k8s_openapi::apimachinery::pkg::apis::meta::v1::ObjectMeta::default(),
+            spec: MemcachedClusterSpec::default(),
+        }
+    }
 }
