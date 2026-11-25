@@ -27,3 +27,7 @@ vstatefulset_controller.*.txt
 # Other
 certs
 
+
+# Nix / direnv
+.direnv/
+result
