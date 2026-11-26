@@ -304,7 +304,12 @@ pub struct VHorizontalPodAutoscalerSpec {
 
 #[derive(Clone, Debug, Default, serde::Deserialize, serde::Serialize, schemars::JsonSchema)]
 pub struct VHorizontalPodAutoscalerStatus {
+    pub conditions: Option<k8s_openapi::api::autoscaling::v2::HorizontalPodAutoscalerCondition>,
+    pub current_metrics: Option<k8s_openapi::api::autoscaling::v2::MetricStatus>,
+    pub current_replicas: Option<i32>,
     pub desired_replicas: i32,
+    pub last_scale_time: Option<k8s_openapi::apimachinery::pkg::apis::meta::v1::Time>,
+    // TODO => voir pour observed_generation
 }
  
 impl Default for VHorizontalPodAutoscaler {
