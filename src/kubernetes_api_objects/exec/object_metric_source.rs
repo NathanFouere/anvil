@@ -1,5 +1,5 @@
 use crate::kubernetes_api_objects::exec::{
-    cross_version_objet_reference::*, metric_identifier::*, metric_target::*, resource::*,
+    cross_version_object_reference::*, metric_identifier::*, metric_target::*, resource::*,
 };
 use crate::kubernetes_api_objects::spec::object_metric_source::*;
 use vstd::prelude::*;

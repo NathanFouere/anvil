@@ -293,25 +293,33 @@ pub struct RabbitmqClusterPersistenceSpec {
     PartialEq,
 )]
 #[kube(group = "anvil.dev", version = "v1", kind = "VHorizontalPodAutoscaler")]
-#[kube(shortname = "vrs", namespaced)]
+#[kube(shortname = "hpa", namespaced)]
 #[kube(status = "VHorizontalPodAutoscalerStatus")]
 pub struct VHorizontalPodAutoscalerSpec {
     pub behavior: Option<k8s_openapi::api::autoscaling::v2::HorizontalPodAutoscalerBehavior>,
+    #[serde(rename = "maxReplicas")]
     pub max_replicas: i32,
     pub metrics: Option<k8s_openapi::api::autoscaling::v2::MetricSpec>,
+    #[serde(rename = "minReplicas")]
     pub min_replicas: Option<i32>,
+    #[serde(rename = "scaleTargetRef")]
+    pub scale_target_ref: k8s_openapi::api::autoscaling::v2::CrossVersionObjectReference,
 }
 
 #[derive(Clone, Debug, Default, serde::Deserialize, serde::Serialize, schemars::JsonSchema)]
 pub struct VHorizontalPodAutoscalerStatus {
     pub conditions: Option<k8s_openapi::api::autoscaling::v2::HorizontalPodAutoscalerCondition>,
+    #[serde(rename = "currentMetrics")]
     pub current_metrics: Option<k8s_openapi::api::autoscaling::v2::MetricStatus>,
+    #[serde(rename = "currentReplicas")]
     pub current_replicas: Option<i32>,
+    #[serde(rename = "desiredReplicas")]
     pub desired_replicas: i32,
+    #[serde(rename = "lastScaleTime")]
     pub last_scale_time: Option<k8s_openapi::apimachinery::pkg::apis::meta::v1::Time>,
     // TODO => voir pour observed_generation
 }
- 
+
 impl Default for VHorizontalPodAutoscaler {
     fn default() -> Self {
         Self {

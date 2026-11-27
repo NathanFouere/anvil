@@ -4,6 +4,7 @@
 # Editor / IDE
 .vscode/
 verifiable-controllers.code-workspace
+.zed/
 
 # Cargo build artifacts
 /target

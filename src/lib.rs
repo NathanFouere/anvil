@@ -20,5 +20,7 @@ pub mod vreplicaset_controller;
 pub mod vstatefulset_controller;
 #[path = "controllers/rabbitmq_controller/mod.rs"]
 pub mod rabbitmq_controller;
+#[path = "controllers/vhpa_controller/mod.rs"]
+pub mod vhpa_controller;
 #[path = "controllers/composition/mod.rs"]
 pub mod composition;

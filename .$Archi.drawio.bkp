@@ -1,0 +1,52 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="CdrRrSZA-fKao6Ltuo2q">
+    <mxGraphModel dx="869" dy="1260" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YE-dTHQj3G1ustesndxh-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;" value="Controller" vertex="1">
+          <mxGeometry height="140" width="390" x="220" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF9999;" value="Trusted" vertex="1">
+          <mxGeometry height="60" width="120" x="180" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Model" vertex="1">
+          <mxGeometry height="60" width="120" x="300" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CDA2BE;" value="Proof" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Exec" vertex="1">
+          <mxGeometry height="60" width="120" x="540" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="shim_layer" vertex="1">
+          <mxGeometry height="60" width="120" x="70" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF9999;" value="controller_runtime" vertex="1">
+          <mxGeometry height="60" width="120" x="120" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="KubernetesApiObjects" vertex="1">
+          <mxGeometry height="60" width="130" x="320" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="KubernetesCluster" vertex="1">
+          <mxGeometry height="60" width="120" x="590" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Exec" vertex="1">
+          <mxGeometry height="60" width="120" x="270" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Spec" vertex="1">
+          <mxGeometry height="60" width="120" x="390" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#CDA2BE;" value="Proof" vertex="1">
+          <mxGeometry height="60" width="120" x="530" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="YE-dTHQj3G1ustesndxh-13" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Spec" vertex="1">
+          <mxGeometry height="60" width="120" x="650" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="V36gMsV26jOl-jsMLQYq-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF9999;" value="crds&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="150" y="600" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

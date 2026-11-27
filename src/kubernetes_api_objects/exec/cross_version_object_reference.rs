@@ -1,5 +1,5 @@
 use crate::kubernetes_api_objects::exec::resource::*;
-use crate::kubernetes_api_objects::spec::cross_version_objet_reference::*;
+use crate::kubernetes_api_objects::spec::cross_version_object_reference::*;
 use crate::vstd_ext::string_view::*;
 use vstd::prelude::*;
 

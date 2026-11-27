@@ -1,5 +1,5 @@
 use crate::kubernetes_api_objects::spec::{
-    cross_version_objet_reference::CrossVersionObjectReferenceView,
+    cross_version_object_reference::CrossVersionObjectReferenceView,
     metric_identifier::MetricIdentifierView,
     metric_target::MetricTargetView,
 };
